@@ -12,6 +12,9 @@ import requests
 import os
 import time
 
+
+fake = Faker("pt_br")
+
 def setup_driver():
     options = Options()
     # options.add_argument("--headless")  # Opcional: executar em modo headless
@@ -19,7 +22,7 @@ def setup_driver():
     return driver
 
 def login(driver, email, senha):
-    url = "http://projetofinal.jogajuntoinstituto.org/"
+    url = "https://projetofinal.jogajuntoinstituto.org/"
     driver.get(url)
 
     email_input = WebDriverWait(driver, 20).until(
